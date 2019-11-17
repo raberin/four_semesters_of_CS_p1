@@ -62,6 +62,7 @@ const stitch = (left, right) => {
 
   //concats the left over elements of whatever array was leftover
   return results.concat(left, right);
+  // return [...results, ...left, ...right]
 };
 
 let nums1 = [1, 5, 6, 9, 11];
@@ -71,7 +72,7 @@ let nums2 = [2, 7, 8, 10, 12, 14];
 
 const mergeSort = nums => {
   //Base case
-  if (nums.length < 2) {
+  if (nums.length <= 1) {
     return nums;
   }
   //Creating 2 arrays by slicing
