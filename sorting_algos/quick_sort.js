@@ -32,32 +32,32 @@ BEST CASE: O(nlogn) Time / O(n) Space
 WORSE CASE: Not good AT ALL for sorted lists
 
 */
-//Mutates original array
-const quickSort = nums => {
-  if (nums.length < 2) {
-    return nums;
-  }
-  let pivot = nums.pop();
-  let left = [];
-  let right = [];
+//Mutates original array (Destructive) NOT GOOD!
+// const quickSort = nums => {
+//   if (nums.length < 2) {
+//     return nums;
+//   }
+//   let pivot = nums.pop();
+//   let left = [];
+//   let right = [];
 
-  //Sorting each ele anything less than pivot goes left
-  //Greater than pivot goes right
-  while (nums.length) {
-    if (nums[0] < pivot) {
-      left.push(nums.shift());
-    } else {
-      right.push(nums.shift());
-    }
-  }
+//   //Sorting each ele anything less than pivot goes left
+//   //Greater than pivot goes right
+//   while (nums.length) {
+//     if (nums[0] < pivot) {
+//       left.push(nums.shift());
+//     } else {
+//       right.push(nums.shift());
+//     }
+//   }
 
-  let qL = quickSort(left);
-  let qR = quickSort(right);
+//   let qL = quickSort(left);
+//   let qR = quickSort(right);
 
-  return [...qL, pivot, ...qR];
-};
+//   return [...qL, pivot, ...qR];
+// };
 
-//Non mutating function
+//Non destructive function
 const quickSort = nums => {
   if (nums.length < 2) {
     return nums;
