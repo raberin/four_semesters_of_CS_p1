@@ -97,7 +97,7 @@ class Tree {
           current = current.left;
         } else {
           current.left = new Node(value); //create node to left of root
-          return;
+          break; //exit loop
         }
       } else {
         this.root.right; //go right
@@ -105,7 +105,7 @@ class Tree {
           current = current.right; //if right node is true, move right
         } else {
           current.right = new Node(value); //Create node to right of root
-          return;
+          break; //exit loop
         }
       }
     }
