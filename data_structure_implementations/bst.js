@@ -3,6 +3,11 @@
 Trees cans be a useful structure for a middle ground between LinkedLists and ArrayLists. We're going to look a simple flavor of trees: the trusty binary search tree. The gist of the BST is that a node in a BST has zero, one, or two subtrees. Every element in the left subtree is lesser than the value of the node and every node in the right is greater. By being able to depend on this fact, it makes it very simple to add and find new elements. Like LinkedLists, we just have to change pointers when we add new elements. Let's step through an add.
 
 
+//Pros: Insert, Delete -- O(logN) must be balanced
+//Cons: Lookup/Search takes a long time O(logN), O(n) lookup if the BST is linear
+
+
+
 Current Tree:
       10
     /   \
@@ -82,7 +87,7 @@ class Tree {
 
   add(value) {
     if (!this.root) {
-      //Base case
+      //Base case no root/head, create new root
       this.root = new Node(value);
       return;
     }
